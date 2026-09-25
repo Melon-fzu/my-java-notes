@@ -1,7 +1,7 @@
 - [x] 已掌握：Java程序基本格式，编写注释，变量与常量,整数类型，二进制，浮点类型，字符类型,布尔类型
 - [x] (java10)局部变量类型判断,赋值运算符，算术运算符,括号运算符，自增自减运算符,位运算
 - [x] 关系运算符，逻辑运算符,代码块和作用域,选择结构，(java14)switch表达式,循环结构
-- [x] (java9)交互式编程，类对象方法，this关键字,方法的重载和递归，
+- [x] (java9)交互式编程，类对象方法，this关键字,方法的重载和递归，构造方法
 # 基本格式，注释
 ```java
 /**
@@ -416,4 +416,24 @@ int add(int a){      //求1~n的和
         if(a==0)return 0;
         return add(a-1)+a;
     }
+```
+# 构造方法
+```java
+Person(String name ,int age ,String gender){ //构造方法(初始化)
+        System.out.println("我出生啦！");
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+    Person(){
+        name = "瓜瓜";
+    }
+
+Person(String name,int age){
+    this(name,age,null);     //this还可以引用其他构造方法
+}
+
+{
+            System.out.println("我是代码块" + age);   //新建一个代码块会在初始后，构造前执行
+}
 ```
